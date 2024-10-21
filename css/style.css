@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/*||RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+img {
+    display: block;
+}
+
+/*|| VARIABLES */
+:root {
+    /*FONTS*/
+    --FS: 16px;
+    --FF:  "Josefin Sans", sans-serif;
+    --FW-LIGHT: 300;
+    --FW-NORMAL: 400;
+    --FW-HEAVY: 600;
+    /*COLORS*/
+        /*Primary COLORS*/
+    --CLR-DESATURATED-RED: hsl(0, 36%, 70%);
+    --CLR-DESATURATED-RED-A: hsl(0, 50%, 98%);
+    --CLR-SOFT-RED: hsl(0, 93%, 68%);
+        /*Neutral COLORS*/
+    --CLR-DRK-GRAYISH-RED: hsl(0, 6%, 24%);
+        /*Gradient COLORS*/
+    
+    /*STANDARD MARGIN AND PADDING*/
+    --STNDRD-MARGIN: 1em;
+    --PADDING-TB: 1em;
+}
+
+/*|| UTILITY CLASSES*/
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+/*|| GENERAL STYLES */
+
+html {
+    font-family: var(--FF);
+    font-size: var(--FS);
+    font-weight: var(--FW-NORMAL);
+}
+
+body {
+    background-color: var(--CLR-DESATURATED-RED-A);
+    width: 100vw;
+    color: var(--CLR-DESATURATED-RED);
+    line-height: 1.5;
+    text-align: center;
+}
+
+h1 {
+    font-weight: var(--FW-LIGHT);
+    text-transform: uppercase;
+    line-height: normal;
+    padding: 1.5em 2em 0 2em;
+    letter-spacing: 0.45em;
+}
+h1 .fontChangeH1 {
+    color: var(--CLR-DRK-GRAYISH-RED);
+    font-weight: var(--FW-HEAVY);
+}
+
+/*|| HERO */
+
+.logoImg{
+    margin: 2em 1em 2em 2em;
+}
+
+.heroImg {
+    margin-top: var(--STNDRD-MARGIN);
+    width: 100%;
+}
+.heroImgDesktop {
+    display: none;
+}
+/*|| CONTAINER*/
+
+.container p {
+    padding: 1.25em 1.14em; 
+}
+
+/*||FORM*/
+
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid transparent;
+    padding-bottom: 0.5em;
+    position: relative;
+}
+
+.form__input {
+    width: 300px;
+    border: 1px solid var(--CLR-DESATURATED-RED);
+    padding: 1em;
+    border-radius: 20px;
+    background-color: var(--CLR-DESATURATED-RED-A);
+    position: relative;
+}
+
+.form__input::placeholder {
+    color: var(--CLR-DESATURATED-RED);
+}
+
+.form__submitBtn {
+    position: absolute;
+    right: 35px;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    padding: 0.72em 1.5em;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    box-shadow: 0 0.25em 1.5em var(--CLR-DESATURATED-RED);
+}
+
+.form__submitBtn:hover,
+.form__submitBtn:focus, 
+.form__submitBtn:active {
+    background-image: linear-gradient(135deg, hsla(0, 80%, 86%, 0.653), hsla(0, 74%, 74%, 0.557));;
+}
+
+/*||FOOTER*/
+
+.attribution { font-size: 11px; text-align: center; padding: 1em 0}
+.attribution a { color: hsl(343, 42%, 61%);} 
+
+
+@media screen and (min-width: 1024px) {
+    body {
+        background-image: url(../images/bg-pattern-desktop.svg);
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+    }
+    .heroImg {
+        display: none;
+    }
+    .heroImgDesktop {
+        display: block;
+        float: right;
+       position: absolute;
+       top: 0;
+       right: 0;
+       z-index: -10000000;
+       height: 100vh;
+    }
+    .container,
+    .attribution {
+       /*  border: 1px solid red; */
+        width: 50vw;
+        height: 50vh;
+       
+
+    }
+}
